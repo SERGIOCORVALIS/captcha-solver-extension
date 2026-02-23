@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  CAPTCHA Solver Extension Configuration
+  Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
+  
+  This XML file contains the complete configuration for the CAPTCHA Solver system.
+  Use APPLY_CONFIG.bat to automatically apply these settings.
+-->
+<captcha-solver-config>
+  <!-- Server Configuration -->
+  <server>
+    <port>3001</port>
+    <host>localhost</host>
+    <endpoint>http://localhost:3001/api/solve</endpoint>
+    <health-check>http://localhost:3001/health</health-check>
+    <api-key>JHQBCCKJJBBKJkhKUUKHOWN73987230598TGU</api-key>
+    <timeout>120000</timeout>
+    <environment>development</environment>
+  </server>
+
+  <!-- Extension Configuration -->
+  <extension>
+    <enabled>true</enabled>
+    <auto-solve>true</auto-solve>
+    <hide-ui>false</hide-ui>
+    
+    <!-- API Provider Settings -->
+    <api-config>
+      <provider>custom</provider>
+      <endpoint>http://localhost:3001/api/solve</endpoint>
+      <api-key>JHQBCCKJJBBKJkhKUUKHOWN73987230598TGU</api-key>
+      <timeout>120000</timeout>
+      <use-local-solver>false</use-local-solver>
+    </api-config>
+
+    <!-- CAPTCHA Types Enabled -->
+    <captcha-types>
+      <recaptcha-v2>true</recaptcha-v2>
+      <recaptcha-v3>true</recaptcha-v3>
+      <hcaptcha>true</hcaptcha>
+      <turnstile>true</turnstile>
+      <image-captcha>true</image-captcha>
+    </captcha-types>
+
+    <!-- Advanced Settings -->
+    <advanced>
+      <click-delay>500</click-delay>
+      <solve-delay>1000</solve-delay>
+      <retry-attempts>3</retry-attempts>
+      <enable-logging>true</enable-logging>
+      <mouse-movement>true</mouse-movement>
+      <human-like-behavior>true</human-like-behavior>
+    </advanced>
+
+    <!-- URL Filtering -->
+    <url-filtering>
+      <whitelist>
+        <!-- Add allowed URLs here -->
+        <!-- <url>https://example.com</url> -->
+      </whitelist>
+      <blacklist>
+        <!-- Add blocked URLs here -->
+        <!-- <url>https://blocked-site.com</url> -->
+      </blacklist>
+    </url-filtering>
+  </extension>
+
+  <!-- Server Advanced Settings -->
+  <server-advanced>
+    <headless>true</headless>
+    <solver-timeout>120000</solver-timeout>
+    <retry-attempts>3</retry-attempts>
+    <use-ml>true</use-ml>
+    <ml-model-path>./models</ml-model-path>
+    <rate-limit>
+      <window-ms>900000</window-ms>
+      <max-requests>100</max-requests>
+    </rate-limit>
+    <log-level>info</log-level>
+  </server-advanced>
+
+  <!-- Test URLs -->
+  <test-urls>
+    <recaptcha-v2>https://www.google.com/recaptcha/api2/demo</recaptcha-v2>
+    <recaptcha-v3>https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-</recaptcha-v3>
+    <hcaptcha>https://www.hcaptcha.com/demo</hcaptcha>
+  </test-urls>
+
+  <!-- Build Configuration -->
+  <build>
+    <extension>
+      <source-dir>src</source-dir>
+      <output-dir>dist</output-dir>
+      <main-script>content/content-script.js</main-script>
+      <service-worker>background/service-worker.js</service-worker>
+    </extension>
+    <server>
+      <source-dir>server/src</source-dir>
+      <output-dir>server/dist</output-dir>
+      <main-script>index.js</main-script>
+    </server>
+  </build>
+
+  <!-- Verification Checklist -->
+  <verification>
+    <server>
+      <check-port>true</check-port>
+      <check-health>true</check-health>
+      <check-api>true</check-api>
+      <check-logs>true</check-logs>
+    </server>
+    <extension>
+      <check-build>true</check-build>
+      <check-installation>true</check-installation>
+      <check-settings>true</check-settings>
+      <check-runtime>true</check-runtime>
+    </extension>
+  </verification>
+
+  <!-- Troubleshooting Steps -->
+  <troubleshooting>
+    <step id="1">
+      <description>Check if server is running</description>
+      <command>netstat -ano | findstr ":3001" | findstr "LISTENING"</command>
+      <expected>Port 3001 should be in LISTENING state</expected>
+    </step>
+    <step id="2">
+      <description>Test server health endpoint</description>
+      <command>powershell -Command "Invoke-RestMethod -Uri http://localhost:3001/health"</command>
+      <expected>Should return {"status":"ok","timestamp":"..."}</expected>
+    </step>
+    <step id="3">
+      <description>Check extension build</description>
+      <command>dir dist\content\content-script.js</command>
+      <expected>File should exist</expected>
+    </step>
+    <step id="4">
+      <description>Check server build</description>
+      <command>dir server\dist\index.js</command>
+      <expected>File should exist</expected>
+    </step>
+    <step id="5">
+      <description>Verify API key match</description>
+      <command>findstr "API_KEY" server\.env</command>
+      <expected>Should match extension API key</expected>
+    </step>
+  </troubleshooting>
+</captcha-solver-config>
