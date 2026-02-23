@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+
 REM Start Server and Verify
 REM Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
 
@@ -116,3 +118,4 @@ if %ERRORLEVEL% EQU 0 (
 )
 echo.
 pause
+
