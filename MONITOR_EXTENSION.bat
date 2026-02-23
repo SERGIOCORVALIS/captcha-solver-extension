@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+
 REM Monitor Extension Activity
 REM Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
 
@@ -51,7 +53,11 @@ echo ========================================
 echo.
 echo Последние 5 записей из логов сервера:
 echo.
-powershell -Command "Get-Content server\logs\combined.log -Tail 5 | ForEach-Object { $line = $_; if ($line -match 'POST.*api/solve' -or $line -match 'Solving CAPTCHA' -or $line -match 'error' -or $line -match 'solved') { Write-Host $line -ForegroundColor Yellow } else { Write-Host $line } }"
+if exist "server\logs\combined.log" (
+    powershell -Command "Get-Content server\logs\combined.log -Tail 5 | ForEach-Object { $line = $_; if ($line -match 'POST.*api/solve' -or $line -match 'Solving CAPTCHA' -or $line -match 'error' -or $line -match 'solved') { Write-Host $line -ForegroundColor Yellow } else { Write-Host $line } }"
+) else (
+    echo [WARN] server\logs\combined.log not found.
+)
 echo.
 echo Проверьте консоль браузера (F12) на наличие:
 echo   - Сообщений "[CAPTCHA Solver]"
@@ -60,3 +66,4 @@ echo.
 echo Нажмите Ctrl+C для остановки
 timeout /t 5 >nul
 goto :monitor
+
