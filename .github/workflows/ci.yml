@@ -1,0 +1,36 @@
++name: CI
++
++on:
++  push:
++    branches: ["**"]
++  pull_request:
++
++jobs:
++  quality:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: npm
++
++      - run: npm ci
++      - run: npm run type-check
++      - run: npm run lint:ci
++      - run: npm test
++      - run: npm run test:e2e:smoke
++
++      - name: Upload Playwright artifacts (on failure)
++        if: failure()
++        uses: actions/upload-artifact@v4
++        with:
++          name: ci-playwright-artifacts
++          path: |
++            playwright-report/
++            test-results/
++          if-no-files-found: ignore
+ 
+EOF
+)
