@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+
 REM Automatic Update Script for CAPTCHA Solver Extension
 REM Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
 
@@ -45,6 +47,14 @@ if %ERRORLEVEL% NEQ 0 (
 )
 echo [OK] Extension dependencies updated
 echo.
+
+REM Pre-check required extension assets
+if not exist "public\manifest.json" (
+    echo [ERROR] Required file public\manifest.json not found
+    echo         Run this script from repository root or restore the public folder.
+    pause
+    exit /b 1
+)
 
 REM Step 3: Rebuild extension
 echo ========================================
