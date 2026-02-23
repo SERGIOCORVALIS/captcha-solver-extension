@@ -1,0 +1,1 @@
+function t(t){if(!t||"string"!=typeof t)return!1;const n=t.trim();return n.length>=10&&n.length<=200&&/^[a-zA-Z0-9_-]+$/.test(n)}function n(t){try{const n=new URL(t);return"http:"===n.protocol||"https:"===n.protocol}catch{return!1}}function r(t){if(!t||"string"!=typeof t)return!1;const n=t.trim();return n.length>=20&&n.length<=100}export{n as a,t as b,r as i};

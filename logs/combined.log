@@ -1,0 +1,391 @@
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:31.660Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:31.668Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T14:41:31.671Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:31.691Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.029Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.038Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.041Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.041Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.042Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.357Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.364Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.366Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.367Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:41:35.368Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:41:35.368Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.368Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.369Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.369Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:35.369Z"}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.433Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.439Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.439Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.517Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.521Z","useGPU":false}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.518Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.518Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.518Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.522Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.523Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.525Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.525Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:41:36.525Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:41:36.526Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.526Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.526Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.526Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.526Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.527Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.527Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.527Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.527Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.530Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.531Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.532Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.539Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.539Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.540Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.541Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.543Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.544Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.545Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.545Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:41:36.546Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:41:36.546Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.546Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.546Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.546Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.546Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.547Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:36.577Z","useGPU":false}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:37.377Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:37.378Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T14:41:37.420Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:37.422Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T14:41:37.423Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:42.610Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.274Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.281Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.284Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.285Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:44:43.285Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:44:43.286Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.286Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.287Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.287Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.289Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:43.972Z","useGPU":false}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.025Z","useGPU":false}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.320Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.327Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.327Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.560Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.560Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.561Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.561Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.565Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.566Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.568Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.568Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:44:44.569Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:44:44.569Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.569Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.569Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.569Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.569Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.570Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.571Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.571Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.572Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.577Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.577Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.578Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.593Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.594Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.595Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.597Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.600Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.601Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.604Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.605Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:44:44.606Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:44:44.606Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.607Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.607Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.607Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.608Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:44.609Z"}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:45.170Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:45.173Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T14:44:45.243Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:45.245Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:45.245Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.660Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.669Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T14:44:46.673Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.760Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.770Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.774Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.775Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:44:46.776Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T14:45:26.786Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:23.017Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:23.027Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T14:48:23.029Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:23.041Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.496Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.505Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.508Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.508Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.509Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.857Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.864Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.867Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.868Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:48:26.869Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:48:26.869Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.870Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.870Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.870Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:26.871Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.684Z","useGPU":false}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.694Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.700Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.699Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.700Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.700Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.700Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.701Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.703Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.704Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.706Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.706Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:48:27.706Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:48:27.706Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.707Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.708Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.710Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.710Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.711Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.718Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.718Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.719Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.720Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.722Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.722Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.724Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.724Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:48:27.724Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:48:27.724Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.724Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.724Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.724Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.725Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.725Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:27.741Z","useGPU":false}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:28.025Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:28.025Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T14:48:28.048Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:28.049Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T14:48:28.049Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:10.389Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:10.416Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:10.424Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T14:52:10.426Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:13.973Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:13.982Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:13.985Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:13.985Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:13.988Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.358Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.365Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.367Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.368Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:52:14.369Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:52:14.369Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.370Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.370Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.371Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:14.372Z"}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.186Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.190Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.190Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.263Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.286Z","useGPU":false}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.264Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.264Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.264Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.268Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.269Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.270Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.271Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:52:15.271Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:52:15.271Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.271Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.271Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.272Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.272Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.272Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.272Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.272Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.273Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.275Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.275Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.276Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.285Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.286Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.287Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.288Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.290Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.291Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.293Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.293Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T14:52:15.293Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T14:52:15.293Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.293Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.293Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.294Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.294Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.295Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.343Z","useGPU":false}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.505Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.505Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T14:52:15.528Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.529Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T14:52:15.529Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.353Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.364Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.367Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.368Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.368Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.887Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.896Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.899Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.900Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:17:07.901Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:17:07.901Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.902Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.902Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.903Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:07.904Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:08.860Z","useGPU":false}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:08.925Z","useGPU":false}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.105Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.112Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.113Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.230Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.231Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.231Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.231Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.236Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.238Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.241Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.241Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:17:09.242Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:17:09.242Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.242Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.242Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.242Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.243Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.243Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.243Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.244Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.244Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.247Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.247Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.249Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.263Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.264Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.266Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.267Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.273Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.276Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.278Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.278Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:17:09.278Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:17:09.278Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.279Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.279Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.279Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.280Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:09.281Z"}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:10.009Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:10.010Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T15:17:10.074Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:10.076Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:10.077Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:11.650Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:11.650Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T15:17:11.659Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T15:17:11.662Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:20.954Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:20.972Z"}
+{"level":"info","message":"A/B test started","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:20.979Z"}
+{"level":"info","message":"A/B test started","model":"model2","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:20.980Z"}
+{"accuracy":"80.00%","attempts":10,"level":"info","message":"Best model selected from A/B testing","model":"model1","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:20.981Z"}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.027Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.108Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.115Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.116Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:34:22.117Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:34:22.118Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.119Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.120Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.121Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:22.123Z"}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:23.806Z","useGPU":false}
+{"level":"info","maxParallel":4,"message":"Performance optimizer initialized","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:23.879Z","useGPU":false}
+{"hasImageData":true,"imageDataLength":118,"level":"info","message":"Solving image CAPTCHA","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.585Z"}
+{"imageSize":70,"level":"info","message":"Processing image with OCR","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.596Z"}
+{"level":"info","message":"Initializing Tesseract.js OCR worker...","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.597Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.875Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.876Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.877Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.878Z","totalModels":1}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.885Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.890Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.894Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.895Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:34:24.895Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:34:24.896Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.896Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.896Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.897Z"}
+{"level":"info","message":"Loading improved ML models for reCAPTCHA...","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.897Z"}
+{"error":"The specified module could not be found.\r\n\\\\?\\C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\node_modules\\@tensorflow\\tfjs-node\\lib\\napi-v8\\tfjs_binding.node","level":"warn","message":"TensorFlow.js not available","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.898Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.898Z"}
+{"level":"warn","message":"TensorFlow.js not available, using heuristics only","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.898Z"}
+{"level":"info","message":"Model added to ensemble","name":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.899Z","totalModels":1}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving with model ensemble","modelCount":1,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.904Z"}
+{"level":"info","message":"A/B test started","model":"improved","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.906Z"}
+{"challengeType":"test challenge","imageCount":9,"level":"info","message":"Solving image challenge with improved ML models","modelsAvailable":[],"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.909Z"}
+{"level":"info","message":"Using improved heuristics for image selection (no ML models available)","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.936Z"}
+{"confidences":[0.68,0.68,0.68,0.58],"indices":[2,4,6,8],"level":"info","message":"Improved ML model predictions","selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.939Z","topObjects":[],"totalImages":9}
+{"indices":[2,4,6,8],"level":"info","message":"Ensemble predictions","predictions":[{"confidence":"0.65","index":2,"models":["improved"],"votes":1},{"confidence":"0.65","index":4,"models":["improved"],"votes":1},{"confidence":"0.65","index":6,"models":["improved"],"votes":1},{"confidence":"0.65","index":8,"models":["improved"],"votes":1}],"selectedCount":4,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.941Z","totalImages":9}
+{"changed":false,"level":"info","message":"Ensemble validation completed","original":[2,4,6,8],"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.944Z","validated":[2,4,6,8]}
+{"count":13,"level":"info","message":"Continuous learning history loaded","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.948Z"}
+{"level":"info","message":"Starting data cleanup","retentionDays":30,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.950Z"}
+{"level":"info","message":"Dashboard data saved","path":"C:\\Users\\dolma\\Documents\\captcha-solver-extension\\server\\models\\dashboard.json","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.953Z"}
+{"level":"info","message":"=== Analytics Dashboard Summary ===","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.953Z"}
+{"averageConfidence":"0.00","level":"info","message":"Metrics:","service":"captcha-solver-server","successRate":"0.00%","timestamp":"2026-02-03T15:34:24.954Z","totalAttempts":0}
+{"level":"info","message":"Learning:","service":"captcha-solver-server","successRate":"15.38%","timestamp":"2026-02-03T15:34:24.954Z","totalFeedbacks":13,"trend":"insufficient_data"}
+{"bestModel":"none","level":"info","message":"A/B Testing:","modelsTested":0,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.954Z"}
+{"averageTime":"0ms","cacheHitRate":"0.00%","level":"info","message":"Performance:","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.954Z"}
+{"level":"info","message":"===================================","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.955Z"}
+{"challengeType":"test","confidence":0.8,"level":"info","message":"Recording successful prediction","selectedCount":2,"service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.956Z"}
+{"level":"warn","message":"TensorFlow.js not available for specialized models","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:24.958Z"}
+{"error":"rank: window too large","level":"warn","message":"Noise reduction failed, using original","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:25.916Z"}
+{"level":"info","message":"Performing OCR recognition...","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:25.917Z"}
+{"confidence":0,"level":"info","message":"OCR recognition completed","service":"captcha-solver-server","text":"","textLength":0,"timestamp":"2026-02-03T15:34:26.029Z"}
+{"cleanedText":"","length":0,"level":"info","message":"OCR result","originalText":"","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:26.037Z"}
+{"level":"warn","message":"OCR did not recognize any text","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:26.038Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:28.725Z"}
+{"level":"warn","message":"Selections are too clustered, might be incorrect","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:28.745Z"}
+{"level":"warn","message":"Validation failed, applying corrections","original":[0,1],"reason":"Low average confidence","service":"captcha-solver-server","suggested":[0,1],"timestamp":"2026-02-03T15:34:28.748Z"}
+{"confidence":0.9,"level":"warn","message":"Anomaly detected, applying special handling","reason":"Very low confidence across all images","service":"captcha-solver-server","timestamp":"2026-02-03T15:34:28.784Z"}

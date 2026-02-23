@@ -1,0 +1,142 @@
+/**
+ * Options Page Styles
+ * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.options-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.options-container h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+.settings-section {
+  margin-bottom: 32px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.settings-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.settings-section label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.settings-section label input[type='checkbox'] {
+  margin-right: 8px;
+}
+
+.settings-section label input[type='text'],
+.settings-section label input[type='password'],
+.settings-section label input[type='number'],
+.settings-section label select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.settings-section label input[type='text']:focus,
+.settings-section label input[type='password']:focus,
+.settings-section label input[type='number']:focus,
+.settings-section label select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.save-section {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.save-button {
+  padding: 12px 24px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #2563eb;
+}
+
+.save-button:active {
+  background-color: #1d4ed8;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  color: #111827;
+  background-color: #f9fafb;
+}
+
+.tab-button.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+  font-weight: 600;
+}
+
+.error-messages {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.error-message:last-child {
+  margin-bottom: 0;
+}
