@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+
 REM Test Extension Working in Browser
 REM Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
 
@@ -108,7 +110,11 @@ echo ========================================
 echo.
 echo Последние 10 записей:
 echo.
-powershell -Command "Get-Content server\logs\combined.log -Tail 10 | Select-String -Pattern 'CAPTCHA|solve|request|error|Error' -Context 0,1"
+if exist "server\logs\combined.log" (
+    powershell -Command "Get-Content server\logs\combined.log -Tail 10 | Select-String -Pattern 'CAPTCHA|solve|request|error|Error' -Context 0,1"
+) else (
+    echo [WARN] server\logs\combined.log not found yet. Start backend server first.
+)
 echo.
 echo Нажмите Ctrl+C для остановки мониторинга
 echo Или закройте это окно
