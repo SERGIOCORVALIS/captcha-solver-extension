@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+
 REM One-Click Run - Start Everything
 REM Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
 
@@ -83,3 +85,4 @@ echo   1. In Chrome: Reload extension (refresh button)
 echo   2. Test: https://www.google.com/recaptcha/api2/demo
 echo.
 pause
+
