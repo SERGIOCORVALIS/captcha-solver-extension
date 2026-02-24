@@ -5,61 +5,31 @@
  * This test opens Chrome with the extension loaded and tests CAPTCHA solving
  */
 
-import { test, expect, chromium } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { existsSync } from 'fs';
+import { assertExtensionBuild, checkServerHealth, getExtensionPath, hasChromium, launchExtensionContext, logInfo, logWarn } from './helpers/e2e-helpers';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+test.skip(!hasChromium, 'Playwright Chromium is not installed in this environment.');
 
-test.describe('CAPTCHA Solving', () => {
-  test.beforeAll(async () => {
-    // Check if browsers are installed by attempting to launch
-    try {
-      const browser = await chromium.launch({ headless: true });
-      await browser.close();
-    } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      if (errorMessage.includes('Executable doesn\'t exist') || errorMessage.includes('browserType.launch')) {
-        throw new Error(
-          'Playwright browsers are not installed.\n' +
-          'Please run: npx playwright install chromium\n' +
-          'Or install all browsers: npx playwright install'
-        );
-      }
-      throw error;
-    }
-  });
+test.describe('CAPTCHA Solving @full', () => {
 
   test('should solve reCAPTCHA v2 on demo page', async () => {
     test.setTimeout(120000); // 2 minutes timeout for solving
     
     // Path to the built extension (must be absolute)
-    const extensionPath = resolve(__dirname, '../../dist');
+    const extensionPath = getExtensionPath(__dirname);
     
-    // Verify extension directory exists
-    if (!existsSync(extensionPath)) {
-      throw new Error(`Extension directory not found: ${extensionPath}. Run 'npm run build' first.`);
-    }
-    if (!existsSync(resolve(extensionPath, 'manifest.json'))) {
-      throw new Error(`manifest.json not found in ${extensionPath}. Extension may not be built correctly.`);
-    }
+    assertExtensionBuild(extensionPath);
     
-    console.log(`Loading extension from: ${extensionPath}`);
+    logInfo(`Loading extension from: ${extensionPath}`);
     
     // Launch Chrome with extension
     // Use a temporary user data directory for better extension loading
     const userDataDir = resolve(__dirname, '../../.playwright-user-data');
-    const context = await chromium.launchPersistentContext(userDataDir, {
-      headless: false, // Show browser
-      args: [
-        `--disable-extensions-except=${extensionPath}`,
-        `--load-extension=${extensionPath}`,
-        '--disable-web-security',
-        '--disable-features=IsolateOrigins,site-per-process', // May help with extension loading
-      ],
-    });
+    const context = await launchExtensionContext(extensionPath, userDataDir);
     
     // Verify extension is loaded and configure it
     const extensionsPage = await context.newPage();
@@ -79,7 +49,7 @@ test.describe('CAPTCHA Solving', () => {
       }
       
       const extensionCount = await extensionsPage.locator('extensions-item').count();
-      console.log(`✅ Extensions loaded: ${extensionCount}`);
+      logInfo(`✅ Extensions loaded: ${extensionCount}`);
       
       if (extensionCount > 0) {
         // Check if extension is enabled
@@ -89,7 +59,7 @@ test.describe('CAPTCHA Solving', () => {
           if (await toggle.isVisible()) {
             const isEnabled = await toggle.getAttribute('aria-checked') === 'true';
             if (!isEnabled) {
-              console.log('Enabling extension...');
+              logInfo('Enabling extension...');
               await toggle.click();
               await extensionsPage.waitForTimeout(1000);
             }
@@ -99,7 +69,7 @@ test.describe('CAPTCHA Solving', () => {
         }
       }
     } catch (error) {
-      console.warn('Could not verify/configure extension via chrome://extensions:', error);
+      logWarn('Could not verify/configure extension via chrome://extensions:', error);
       // Assume extension is enabled if we can't check
       extensionEnabled = true;
     } finally {
@@ -110,7 +80,7 @@ test.describe('CAPTCHA Solving', () => {
     const extensionWasEnabled = extensionEnabled;
     
     // Configure extension via options page
-    console.log('Configuring extension...');
+    logInfo('Configuring extension...');
     const optionsPage = await context.newPage();
     try {
       // Get extension ID from chrome://extensions
@@ -141,10 +111,10 @@ test.describe('CAPTCHA Solving', () => {
         // Configure API settings
         // Note: This requires the options page to be accessible and have form fields
         // For now, we'll just verify the page loads
-        console.log('✅ Options page accessible');
+        logInfo('Options page accessible');
       }
     } catch (error) {
-      console.warn('Could not configure extension via options page:', error);
+      logWarn('Could not configure extension via options page:', error);
     } finally {
       await optionsPage.close();
     }
@@ -157,41 +127,38 @@ test.describe('CAPTCHA Solving', () => {
       const text = msg.text();
       consoleMessages.push(text);
       if (text.includes('[CAPTCHA Solver]') || text.includes('CAPTCHA') || text.includes('ERROR')) {
-        console.log(`[Console ${msg.type()}] ${text}`);
+        logInfo(`[Console ${msg.type()}] ${text}`);
       }
     });
 
     // Set up page error listener
     page.on('pageerror', error => {
-      console.log(`[Page Error] ${error.message}`);
+      logInfo(`[Page Error] ${error.message}`);
     });
 
     // Check if server is running
     try {
-      const response = await page.request.get('http://localhost:3000/health');
-      if (!response.ok()) {
-        throw new Error('Server health check failed');
-      }
-      console.log('✅ Server is running');
+      await checkServerHealth(page);
+      logInfo('Server is running');
     } catch (error) {
       throw new Error('Server is not running. Start it with: cd server && start-server-dev.bat');
     }
     
     try {
       // Navigate to reCAPTCHA demo page
-      console.log('Navigating to reCAPTCHA demo page...');
+      logInfo('Navigating to reCAPTCHA demo page...');
       await page.goto('https://www.google.com/recaptcha/api2/demo', {
         waitUntil: 'networkidle',
         timeout: 30000,
       });
 
       // Wait for reCAPTCHA to load
-      console.log('Waiting for reCAPTCHA to load...');
+      logInfo('Waiting for reCAPTCHA to load...');
       const recaptchaContainer = page.locator('.g-recaptcha, [data-sitekey]').first();
       await expect(recaptchaContainer).toBeVisible({ timeout: 15000 });
 
       // Wait for extension to initialize
-      console.log('Waiting for extension to initialize...');
+      logInfo('Waiting for extension to initialize...');
       await page.waitForTimeout(5000);
       
       // Check if extension is active by looking for extension logs or Chrome API
@@ -214,15 +181,15 @@ test.describe('CAPTCHA Solving', () => {
       }).catch(() => false);
       
       if (extensionLogs.length === 0 && !hasChromeAPI) {
-        console.warn('⚠️ No extension logs detected. Extension may not be loaded or content script not executing.');
-        console.warn('⚠️ Chrome extension API not available in page context.');
+        logWarn('⚠️ No extension logs detected. Extension may not be loaded or content script not executing.');
+        logWarn('⚠️ Chrome extension API not available in page context.');
         // Don't fail yet - extension might still work, just not logging
       } else {
-        console.log(`✅ Extension context: Chrome API=${hasChromeAPI}, Logs=${extensionLogs.length}`);
+        logInfo(`✅ Extension context: Chrome API=${hasChromeAPI}, Logs=${extensionLogs.length}`);
       }
       
       // Wait for extension to detect and solve CAPTCHA
-      console.log('Waiting for extension to solve CAPTCHA...');
+      logInfo('Waiting for extension to solve CAPTCHA...');
       
       // Check if textarea with token appears (indicates CAPTCHA is solved)
       const tokenTextarea = page.locator('textarea[name="g-recaptcha-response"]');
@@ -237,11 +204,11 @@ test.describe('CAPTCHA Solving', () => {
           const tokenValue = await tokenTextarea.inputValue();
           if (tokenValue && tokenValue.length > 20) {
             tokenFound = true;
-            console.log('✅ CAPTCHA solved successfully!');
-            console.log(`Token length: ${tokenValue.length}`);
+            logInfo('✅ CAPTCHA solved successfully!');
+            logInfo(`Token length: ${tokenValue.length}`);
             break;
           }
-        } catch (e) {
+        } catch {
           // Continue waiting
         }
         
@@ -250,7 +217,7 @@ test.describe('CAPTCHA Solving', () => {
           m.includes('ERROR') || m.includes('Failed') || m.includes('error')
         );
         if (errorMessages.length > 0) {
-          console.log('Errors detected:', errorMessages.slice(-3));
+          logInfo('Errors detected:', errorMessages.slice(-3));
         }
         
         await page.waitForTimeout(2000); // Check every 2 seconds
@@ -264,11 +231,11 @@ test.describe('CAPTCHA Solving', () => {
           m.includes('ERROR') || m.includes('Failed') || m.includes('error')
         );
         
-        console.log('❌ CAPTCHA was not solved within timeout');
-        console.log(`Extension logs: ${extensionLogs.length} message(s)`);
-        console.log(`Error logs: ${errorLogs.length} message(s)`);
+        logInfo('❌ CAPTCHA was not solved within timeout');
+        logInfo(`Extension logs: ${extensionLogs.length} message(s)`);
+        logInfo(`Error logs: ${errorLogs.length} message(s)`);
         if (errorLogs.length > 0) {
-          console.log('Recent errors:', errorLogs.slice(-5));
+          logInfo('Recent errors:', errorLogs.slice(-5));
         }
         // Use the extension state we checked earlier (extensionWasEnabled)
         // Don't re-check chrome://extensions as it may timeout or fail
@@ -303,3 +270,4 @@ test.describe('CAPTCHA Solving', () => {
     }
   });
 });
+
