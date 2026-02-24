@@ -3,9 +3,12 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { BaseDetector } from './base-detector';
-import { CaptchaType, CaptchaDetectionResult } from '../types/captcha.types';
-import { TURNSTILE_SELECTORS, CAPTCHA_DOMAINS } from '../constants/captcha-selectors';
+import { BaseDetector } from "./base-detector";
+import { CaptchaType, CaptchaDetectionResult } from "../types/captcha.types";
+import {
+  TURNSTILE_SELECTORS,
+  CAPTCHA_DOMAINS,
+} from "../constants/captcha-selectors";
 
 export class TurnstileDetector extends BaseDetector {
   protected readonly captchaType = CaptchaType.TURNSTILE;
@@ -22,11 +25,11 @@ export class TurnstileDetector extends BaseDetector {
 
     // Check for turnstile global object
     const hasTurnstile =
-      typeof window !== 'undefined' &&
+      typeof window !== "undefined" &&
       (window as unknown as { turnstile?: unknown }).turnstile !== undefined;
 
     const widget = this.findElement(TURNSTILE_SELECTORS.widget);
-    const iframe = this.findIframeByDomain('challenges.cloudflare.com');
+    const iframe = this.findIframeByDomain("challenges.cloudflare.com");
 
     if (!hasTurnstile && !widget && !iframe) {
       return null;
