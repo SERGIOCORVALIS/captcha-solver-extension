@@ -7,8 +7,11 @@
  */
 
 import { test, expect } from '@playwright/test';
+import { hasChromium } from './helpers/e2e-helpers';
 
-test.describe('CAPTCHA Detection', () => {
+test.skip(!hasChromium, 'Playwright Chromium is not installed in this environment.');
+
+test.describe('CAPTCHA Detection @full', () => {
   test('should detect reCAPTCHA v2 elements on demo page', async ({ page }) => {
     test.setTimeout(30000); // Increase timeout for network requests
     
