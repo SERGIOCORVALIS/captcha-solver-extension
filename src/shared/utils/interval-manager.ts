@@ -4,8 +4,8 @@
  */
 
 class IntervalManager {
-  private intervals = new Map<string, NodeJS.Timeout>();
-  private timeouts = new Map<string, NodeJS.Timeout>();
+  private intervals = new Map<string, ReturnType<typeof setInterval>>();
+  private timeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
   /**
    * Set an interval with automatic cleanup tracking
@@ -20,10 +20,13 @@ class IntervalManager {
    */
   setTimeout(id: string, fn: () => void, ms: number): void {
     this.clearTimeout(id);
-    this.timeouts.set(id, setTimeout(() => {
-      fn();
-      this.timeouts.delete(id);
-    }, ms));
+    this.timeouts.set(
+      id,
+      setTimeout(() => {
+        fn();
+        this.timeouts.delete(id);
+      }, ms),
+    );
   }
 
   /**
@@ -52,9 +55,9 @@ class IntervalManager {
    * Clear all intervals and timeouts
    */
   clearAll(): void {
-    this.intervals.forEach(interval => clearInterval(interval));
+    this.intervals.forEach((interval) => clearInterval(interval));
     this.intervals.clear();
-    this.timeouts.forEach(timeout => clearTimeout(timeout));
+    this.timeouts.forEach((timeout) => clearTimeout(timeout));
     this.timeouts.clear();
   }
 
