@@ -3,7 +3,7 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { logger } from './logger';
+import { logger } from "./logger";
 
 interface PerformanceMetric {
   name: string;
@@ -75,14 +75,16 @@ export const performanceMonitor = new PerformanceMonitor();
  */
 export async function measurePerformance<T>(
   name: string,
-  fn: () => Promise<T>
+  fn: () => Promise<T>,
 ): Promise<T> {
   performanceMonitor.start(name);
   try {
     const result = await fn();
     const duration = performanceMonitor.end(name);
     if (duration !== null) {
-      logger.debug(`Performance: ${name}`, { duration: `${duration.toFixed(2)}ms` });
+      logger.debug(`Performance: ${name}`, {
+        duration: `${duration.toFixed(2)}ms`,
+      });
     }
     return result;
   } catch (error) {
@@ -90,3 +92,4 @@ export async function measurePerformance<T>(
     throw error;
   }
 }
+
