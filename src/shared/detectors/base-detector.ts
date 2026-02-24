@@ -3,7 +3,7 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { CaptchaType, CaptchaDetectionResult } from '../types/captcha.types';
+import { CaptchaType, CaptchaDetectionResult } from "../types/captcha.types";
 
 export abstract class BaseDetector {
   protected abstract readonly captchaType: CaptchaType;
@@ -38,7 +38,7 @@ export abstract class BaseDetector {
    * Check if any iframe matches detector domains
    */
   protected checkIframeDomains(): boolean {
-    const iframes = document.querySelectorAll<HTMLIFrameElement>('iframe');
+    const iframes = document.querySelectorAll<HTMLIFrameElement>("iframe");
     for (const iframe of iframes) {
       try {
         const src = iframe.src;
@@ -79,7 +79,7 @@ export abstract class BaseDetector {
    * Find iframe by domain
    */
   protected findIframeByDomain(domain: string): HTMLIFrameElement | null {
-    const iframes = document.querySelectorAll<HTMLIFrameElement>('iframe');
+    const iframes = document.querySelectorAll<HTMLIFrameElement>("iframe");
     for (const iframe of iframes) {
       try {
         if (iframe.src.includes(domain)) {
@@ -95,7 +95,10 @@ export abstract class BaseDetector {
   /**
    * Calculate detection confidence (0-1)
    */
-  protected calculateConfidence(elementsFound: number, totalSelectors: number): number {
+  protected calculateConfidence(
+    elementsFound: number,
+    totalSelectors: number,
+  ): number {
     return Math.min(elementsFound / totalSelectors, 1);
   }
 
@@ -104,9 +107,9 @@ export abstract class BaseDetector {
    */
   protected getSiteKey(element: HTMLElement): string | null {
     return (
-      element.getAttribute('data-sitekey') ||
-      element.getAttribute('data-site-key') ||
-      element.getAttribute('sitekey') ||
+      element.getAttribute("data-sitekey") ||
+      element.getAttribute("data-site-key") ||
+      element.getAttribute("sitekey") ||
       null
     );
   }
