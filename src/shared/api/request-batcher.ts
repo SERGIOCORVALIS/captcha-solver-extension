@@ -3,11 +3,11 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { logger } from '../utils/logger';
+import { logger } from "../utils/logger";
 
-export interface BatchedRequest<T> {
-  request: T;
-  resolve: (value: any) => void;
+export interface BatchedRequest<TRequest, TResponse> {
+  request: TRequest;
+  resolve: (value: TResponse) => void;
   reject: (error: Error) => void;
   timestamp: number;
 }
@@ -19,7 +19,7 @@ export interface BatcherOptions {
 }
 
 export class RequestBatcher<TRequest, TResponse> {
-  private queue: BatchedRequest<TRequest>[] = [];
+  private queue: BatchedRequest<TRequest, TResponse>[] = [];
   private timer: ReturnType<typeof setTimeout> | null = null;
   private readonly batchSize: number;
   private readonly batchDelay: number;
@@ -28,7 +28,7 @@ export class RequestBatcher<TRequest, TResponse> {
 
   constructor(
     sendBatch: (requests: TRequest[]) => Promise<TResponse[]>,
-    options: BatcherOptions = {}
+    options: BatcherOptions = {},
   ) {
     this.sendBatch = sendBatch;
     this.batchSize = options.batchSize || 5;
@@ -41,7 +41,7 @@ export class RequestBatcher<TRequest, TResponse> {
    */
   async add(request: TRequest): Promise<TResponse> {
     return new Promise((resolve, reject) => {
-      const batchedRequest: BatchedRequest<TRequest> = {
+      const batchedRequest: BatchedRequest<TRequest, TResponse> = {
         request,
         resolve,
         reject,
@@ -91,12 +91,13 @@ export class RequestBatcher<TRequest, TResponse> {
         if (responses[index] !== undefined) {
           item.resolve(responses[index]);
         } else {
-          item.reject(new Error('No response received for request'));
+          item.reject(new Error("No response received for request"));
         }
       });
     } catch (error) {
       // Reject all promises
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error";
       batch.forEach((item) => {
         item.reject(new Error(errorMessage));
       });
@@ -109,11 +110,11 @@ export class RequestBatcher<TRequest, TResponse> {
   private checkStaleRequests(): void {
     const now = Date.now();
     const staleRequests = this.queue.filter(
-      (item) => now - item.timestamp > this.maxWaitTime
+      (item) => now - item.timestamp > this.maxWaitTime,
     );
 
     if (staleRequests.length > 0) {
-      logger.debug('Flushing stale requests', { count: staleRequests.length });
+      logger.debug("Flushing stale requests", { count: staleRequests.length });
       this.flush();
     }
   }
@@ -140,7 +141,7 @@ export class RequestBatcher<TRequest, TResponse> {
 
     // Reject all pending requests
     this.queue.forEach((item) => {
-      item.reject(new Error('Batch queue cleared'));
+      item.reject(new Error("Batch queue cleared"));
     });
 
     this.queue = [];
