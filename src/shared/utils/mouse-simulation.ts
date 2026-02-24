@@ -10,16 +10,30 @@ function generateBezierPoints(
   startX: number,
   startY: number,
   endX: number,
-  endY: number
+  endY: number,
 ): { cp1x: number; cp1y: number; cp2x: number; cp2y: number } {
-  const distance = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+  const distance = Math.sqrt(
+    Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2),
+  );
   const curvature = Math.random() * 0.3 + 0.2; // Random curvature between 0.2 and 0.5
 
   // Control points for natural curve
-  const cp1x = startX + (endX - startX) * 0.25 + (Math.random() - 0.5) * distance * curvature;
-  const cp1y = startY + (endY - startY) * 0.25 + (Math.random() - 0.5) * distance * curvature;
-  const cp2x = startX + (endX - startX) * 0.75 + (Math.random() - 0.5) * distance * curvature;
-  const cp2y = startY + (endY - startY) * 0.75 + (Math.random() - 0.5) * distance * curvature;
+  const cp1x =
+    startX +
+    (endX - startX) * 0.25 +
+    (Math.random() - 0.5) * distance * curvature;
+  const cp1y =
+    startY +
+    (endY - startY) * 0.25 +
+    (Math.random() - 0.5) * distance * curvature;
+  const cp2x =
+    startX +
+    (endX - startX) * 0.75 +
+    (Math.random() - 0.5) * distance * curvature;
+  const cp2y =
+    startY +
+    (endY - startY) * 0.75 +
+    (Math.random() - 0.5) * distance * curvature;
 
   return { cp1x, cp1y, cp2x, cp2y };
 }
@@ -32,7 +46,7 @@ function bezierPoint(
   p0: number,
   p1: number,
   p2: number,
-  p3: number
+  p3: number,
 ): number {
   const u = 1 - t;
   const tt = t * t;
@@ -53,7 +67,7 @@ export async function simulateMouseMovement(
     steps?: number;
     startX?: number;
     startY?: number;
-  } = {}
+  } = {},
 ): Promise<void> {
   const rect = target.getBoundingClientRect();
   const targetX = rect.left + rect.width / 2;
@@ -64,7 +78,12 @@ export async function simulateMouseMovement(
   const duration = options.duration ?? Math.random() * 300 + 200; // 200-500ms
   const steps = options.steps ?? 20;
 
-  const { cp1x, cp1y, cp2x, cp2y } = generateBezierPoints(startX, startY, targetX, targetY);
+  const { cp1x, cp1y, cp2x, cp2y } = generateBezierPoints(
+    startX,
+    startY,
+    targetX,
+    targetY,
+  );
   const stepDelay = duration / steps;
 
   for (let i = 0; i <= steps; i++) {
@@ -76,7 +95,7 @@ export async function simulateMouseMovement(
     const variationX = (Math.random() - 0.5) * 2;
     const variationY = (Math.random() - 0.5) * 2;
 
-    const mouseMoveEvent = new MouseEvent('mousemove', {
+    const mouseMoveEvent = new MouseEvent("mousemove", {
       view: window,
       bubbles: true,
       cancelable: true,
@@ -95,14 +114,17 @@ export async function simulateMouseMovement(
 /**
  * Simulate mouse hover before click
  */
-export async function simulateHover(target: HTMLElement, duration = 100): Promise<void> {
-  const mouseEnterEvent = new MouseEvent('mouseenter', {
+export async function simulateHover(
+  target: HTMLElement,
+  duration = 100,
+): Promise<void> {
+  const mouseEnterEvent = new MouseEvent("mouseenter", {
     view: window,
     bubbles: true,
     cancelable: true,
   });
 
-  const mouseOverEvent = new MouseEvent('mouseover', {
+  const mouseOverEvent = new MouseEvent("mouseover", {
     view: window,
     bubbles: true,
     cancelable: true,
@@ -123,7 +145,7 @@ export async function simulateHumanClick(
     moveMouse?: boolean;
     hoverDuration?: number;
     clickDelay?: number;
-  } = {}
+  } = {},
 ): Promise<void> {
   const moveMouse = options.moveMouse ?? true;
   const hoverDuration = options.hoverDuration ?? Math.random() * 100 + 50;
@@ -138,7 +160,7 @@ export async function simulateHumanClick(
   await new Promise((resolve) => setTimeout(resolve, clickDelay));
 
   // Mouse down
-  const mouseDownEvent = new MouseEvent('mousedown', {
+  const mouseDownEvent = new MouseEvent("mousedown", {
     view: window,
     bubbles: true,
     cancelable: true,
@@ -149,7 +171,7 @@ export async function simulateHumanClick(
   await new Promise((resolve) => setTimeout(resolve, Math.random() * 20 + 10));
 
   // Mouse up
-  const mouseUpEvent = new MouseEvent('mouseup', {
+  const mouseUpEvent = new MouseEvent("mouseup", {
     view: window,
     bubbles: true,
     cancelable: true,
@@ -160,7 +182,7 @@ export async function simulateHumanClick(
   await new Promise((resolve) => setTimeout(resolve, Math.random() * 20 + 10));
 
   // Click
-  const clickEvent = new MouseEvent('click', {
+  const clickEvent = new MouseEvent("click", {
     view: window,
     bubbles: true,
     cancelable: true,
