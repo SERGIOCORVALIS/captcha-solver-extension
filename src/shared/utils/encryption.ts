@@ -10,9 +10,11 @@
  * Simple XOR encryption/decryption
  */
 function xorEncrypt(text: string, key: string): string {
-  let result = '';
+  let result = "";
   for (let i = 0; i < text.length; i++) {
-    result += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+    result += String.fromCharCode(
+      text.charCodeAt(i) ^ key.charCodeAt(i % key.length),
+    );
   }
   return btoa(result); // Base64 encode
 }
@@ -20,13 +22,15 @@ function xorEncrypt(text: string, key: string): string {
 function xorDecrypt(encrypted: string, key: string): string {
   try {
     const text = atob(encrypted); // Base64 decode
-    let result = '';
+    let result = "";
     for (let i = 0; i < text.length; i++) {
-      result += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+      result += String.fromCharCode(
+        text.charCodeAt(i) ^ key.charCodeAt(i % key.length),
+      );
     }
     return result;
   } catch {
-    return '';
+    return "";
   }
 }
 
@@ -35,7 +39,7 @@ function xorDecrypt(encrypted: string, key: string): string {
  */
 function getEncryptionKey(): string {
   // Use extension ID as part of key
-  const extensionId = chrome.runtime.id || 'default-key';
+  const extensionId = chrome.runtime.id || "default-key";
   // Add some entropy
   return `${extensionId}-captcha-solver-2024`;
 }
@@ -45,7 +49,7 @@ function getEncryptionKey(): string {
  */
 export function encryptApiKey(apiKey: string): string {
   if (!apiKey) {
-    return '';
+    return "";
   }
   return xorEncrypt(apiKey, getEncryptionKey());
 }
@@ -55,7 +59,7 @@ export function encryptApiKey(apiKey: string): string {
  */
 export function decryptApiKey(encryptedKey: string): string {
   if (!encryptedKey) {
-    return '';
+    return "";
   }
   return xorDecrypt(encryptedKey, getEncryptionKey());
 }
