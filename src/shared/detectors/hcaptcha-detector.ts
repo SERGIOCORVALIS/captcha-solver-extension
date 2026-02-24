@@ -3,9 +3,12 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { BaseDetector } from './base-detector';
-import { CaptchaType, CaptchaDetectionResult } from '../types/captcha.types';
-import { HCAPTCHA_SELECTORS, CAPTCHA_DOMAINS } from '../constants/captcha-selectors';
+import { BaseDetector } from "./base-detector";
+import { CaptchaType, CaptchaDetectionResult } from "../types/captcha.types";
+import {
+  HCAPTCHA_SELECTORS,
+  CAPTCHA_DOMAINS,
+} from "../constants/captcha-selectors";
 
 export class HCaptchaDetector extends BaseDetector {
   protected readonly captchaType = CaptchaType.HCAPTCHA;
@@ -26,18 +29,20 @@ export class HCaptchaDetector extends BaseDetector {
 
     // Check for hcaptcha global object
     const hasHcaptcha =
-      typeof window !== 'undefined' &&
+      typeof window !== "undefined" &&
       (window as unknown as { hcaptcha?: unknown }).hcaptcha !== undefined;
 
     const checkbox = this.findElement(HCAPTCHA_SELECTORS.checkbox);
-    const iframe = this.findIframeByDomain('hcaptcha.com');
+    const iframe = this.findIframeByDomain("hcaptcha.com");
     const container = this.findElement(HCAPTCHA_SELECTORS.container);
 
     if (!hasHcaptcha && !checkbox && !iframe && !container) {
       return null;
     }
 
-    const elementsFound = [hasHcaptcha, checkbox, iframe, container].filter(Boolean).length;
+    const elementsFound = [hasHcaptcha, checkbox, iframe, container].filter(
+      Boolean,
+    ).length;
     const confidence = this.calculateConfidence(elementsFound, 4);
 
     let siteKey: string | null = null;
@@ -64,7 +69,7 @@ export class HCaptchaDetector extends BaseDetector {
    */
   private hasHCaptchaScript(): boolean {
     // Check for hcaptcha global object
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const hcaptcha = (window as unknown as { hcaptcha?: unknown }).hcaptcha;
       if (hcaptcha) {
         return true;
@@ -72,10 +77,10 @@ export class HCaptchaDetector extends BaseDetector {
     }
 
     // Check for script tags
-    const scripts = document.querySelectorAll<HTMLScriptElement>('script[src]');
+    const scripts = document.querySelectorAll<HTMLScriptElement>("script[src]");
     for (const script of scripts) {
       const src = script.src.toLowerCase();
-      if (src.includes('hcaptcha') || src.includes('js.hcaptcha.com')) {
+      if (src.includes("hcaptcha") || src.includes("js.hcaptcha.com")) {
         return true;
       }
     }
@@ -83,3 +88,6 @@ export class HCaptchaDetector extends BaseDetector {
     return false;
   }
 }
+
+
+  
