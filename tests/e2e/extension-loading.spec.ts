@@ -5,9 +5,13 @@
 
 import { test, expect } from '@playwright/test';
 import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-test.describe('Extension Loading', () => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+test.describe('Extension Loading @smoke', () => {
   test('should have valid manifest.json', () => {
     const manifestPath = join(__dirname, '../../dist/manifest.json');
     
