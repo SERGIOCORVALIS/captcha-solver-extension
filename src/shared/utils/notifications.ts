@@ -3,12 +3,12 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { CaptchaType } from '../types/captcha.types';
+import { CaptchaType } from "../types/captcha.types";
 
 export interface NotificationOptions {
   title: string;
   message: string;
-  type?: 'basic' | 'image';
+  type?: "basic" | "image";
   iconUrl?: string;
   priority?: -2 | -1 | 0 | 1 | 2;
 }
@@ -16,13 +16,15 @@ export interface NotificationOptions {
 /**
  * Show notification with auto-dismiss
  */
-export async function showNotification(options: NotificationOptions): Promise<string | null> {
+export async function showNotification(
+  options: NotificationOptions,
+): Promise<string | null> {
   try {
     // Request permission if not granted
     if (chrome.notifications && chrome.notifications.create) {
       const notificationId = await chrome.notifications.create({
-        type: options.type || 'basic',
-        iconUrl: options.iconUrl || chrome.runtime.getURL('icons/icon48.png'),
+        type: options.type || "basic",
+        iconUrl: options.iconUrl || chrome.runtime.getURL("icons/icon48.png"),
         title: options.title,
         message: options.message,
         priority: options.priority || 0,
@@ -41,7 +43,7 @@ export async function showNotification(options: NotificationOptions): Promise<st
       return notificationId;
     }
   } catch (error) {
-    console.error('Error showing notification:', error);
+    console.error("Error showing notification:", error);
   }
 
   return null;
@@ -51,21 +53,21 @@ export async function showNotification(options: NotificationOptions): Promise<st
  * Show success notification for solved CAPTCHA
  */
 export async function showCaptchaSolvedNotification(
-  type: CaptchaType
+  type: CaptchaType,
 ): Promise<void> {
   const typeNames: Record<CaptchaType, string> = {
-    [CaptchaType.RECAPTCHA_V2]: 'reCAPTCHA v2',
-    [CaptchaType.RECAPTCHA_V3]: 'reCAPTCHA v3',
-    [CaptchaType.HCAPTCHA]: 'hCaptcha',
-    [CaptchaType.TURNSTILE]: 'Cloudflare Turnstile',
-    [CaptchaType.IMAGE_CAPTCHA]: 'Image CAPTCHA',
-    [CaptchaType.UNKNOWN]: 'CAPTCHA',
+    [CaptchaType.RECAPTCHA_V2]: "reCAPTCHA v2",
+    [CaptchaType.RECAPTCHA_V3]: "reCAPTCHA v3",
+    [CaptchaType.HCAPTCHA]: "hCaptcha",
+    [CaptchaType.TURNSTILE]: "Cloudflare Turnstile",
+    [CaptchaType.IMAGE_CAPTCHA]: "Image CAPTCHA",
+    [CaptchaType.UNKNOWN]: "CAPTCHA",
   };
 
   await showNotification({
-    title: 'CAPTCHA Solved',
+    title: "CAPTCHA Solved",
     message: `${typeNames[type]} solved successfully`,
-    type: 'basic',
+    type: "basic",
     priority: 0,
   });
 }
@@ -75,9 +77,9 @@ export async function showCaptchaSolvedNotification(
  */
 export async function showErrorNotification(message: string): Promise<void> {
   await showNotification({
-    title: 'CAPTCHA Solver Error',
+    title: "CAPTCHA Solver Error",
     message,
-    type: 'basic',
+    type: "basic",
     priority: 1,
   });
 }
@@ -94,6 +96,6 @@ export async function clearAllNotifications(): Promise<void> {
       }
     }
   } catch (error) {
-    console.error('Error clearing notifications:', error);
+    console.error("Error clearing notifications:", error);
   }
 }
