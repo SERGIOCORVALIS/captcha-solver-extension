@@ -24,7 +24,9 @@ export class RateLimiter {
     const windowStart = now - this.config.windowMs;
 
     // Remove old requests outside the window
-    this.requests = this.requests.filter((timestamp) => timestamp > windowStart);
+    this.requests = this.requests.filter(
+      (timestamp) => timestamp > windowStart,
+    );
 
     // Check if we're under the limit
     if (this.requests.length < this.config.maxRequests) {
