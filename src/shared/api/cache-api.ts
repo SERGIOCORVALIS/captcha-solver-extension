@@ -3,7 +3,7 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { CaptchaType } from '../types/captcha.types';
+import { CaptchaType } from "../types/captcha.types";
 
 export interface CachedSolution {
   token: string;
@@ -14,7 +14,7 @@ export interface CachedSolution {
   type: CaptchaType;
 }
 
-const CACHE_KEY = 'captcha_solutions_cache';
+const CACHE_KEY = "captcha_solutions_cache";
 const DEFAULT_TTL = 5 * 60 * 1000; // 5 minutes
 
 export class CacheAPI {
@@ -24,7 +24,7 @@ export class CacheAPI {
   private static generateCacheKey(
     type: CaptchaType,
     siteKey: string,
-    pageUrl: string
+    pageUrl: string,
   ): string {
     return `${type}:${siteKey}:${pageUrl}`;
   }
@@ -35,11 +35,12 @@ export class CacheAPI {
   static async getCachedSolution(
     type: CaptchaType,
     siteKey: string,
-    pageUrl: string
+    pageUrl: string,
   ): Promise<string | null> {
     try {
       const result = await chrome.storage.local.get(CACHE_KEY);
-      const cache = (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
+      const cache =
+        (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
 
       const key = this.generateCacheKey(type, siteKey, pageUrl);
       const cached = cache[key];
@@ -58,7 +59,7 @@ export class CacheAPI {
 
       return cached.token;
     } catch (error) {
-      console.error('Error getting cached solution:', error);
+      console.error("Error getting cached solution:", error);
       return null;
     }
   }
@@ -71,11 +72,12 @@ export class CacheAPI {
     siteKey: string,
     pageUrl: string,
     token: string,
-    ttl: number = DEFAULT_TTL
+    ttl: number = DEFAULT_TTL,
   ): Promise<void> {
     try {
       const result = await chrome.storage.local.get(CACHE_KEY);
-      const cache = (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
+      const cache =
+        (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
 
       const key = this.generateCacheKey(type, siteKey, pageUrl);
       cache[key] = {
@@ -101,7 +103,7 @@ export class CacheAPI {
         await chrome.storage.local.set({ [CACHE_KEY]: cache });
       }
     } catch (error) {
-      console.error('Error caching solution:', error);
+      console.error("Error caching solution:", error);
     }
   }
 
@@ -112,7 +114,7 @@ export class CacheAPI {
     try {
       await chrome.storage.local.remove(CACHE_KEY);
     } catch (error) {
-      console.error('Error clearing cache:', error);
+      console.error("Error clearing cache:", error);
     }
   }
 
@@ -126,7 +128,8 @@ export class CacheAPI {
   }> {
     try {
       const result = await chrome.storage.local.get(CACHE_KEY);
-      const cache = (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
+      const cache =
+        (result?.[CACHE_KEY] as Record<string, CachedSolution>) || {};
 
       const entries = Object.values(cache);
       const now = Date.now();
@@ -137,7 +140,7 @@ export class CacheAPI {
         valid: entries.filter((e) => now <= e.expiresAt).length,
       };
     } catch (error) {
-      console.error('Error getting cache stats:', error);
+      console.error("Error getting cache stats:", error);
       return { total: 0, expired: 0, valid: 0 };
     }
   }
