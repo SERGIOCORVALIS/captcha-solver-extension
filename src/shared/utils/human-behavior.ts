@@ -3,16 +3,17 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { randomSleep, humanDelay } from './delay-utils';
+import { randomSleep, humanDelay } from "./delay-utils";
 
 /**
  * Simulate reading time before action
  */
 export async function simulateReadingTime(
   minTime = 500,
-  maxTime = 2000
+  maxTime = 2000,
 ): Promise<void> {
-  const readingTime = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+  const readingTime =
+    Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
   await randomSleep(readingTime * 0.5, readingTime);
 }
 
@@ -21,7 +22,7 @@ export async function simulateReadingTime(
  */
 export async function simulateHesitation(
   baseDelay = 200,
-  variance = 0.3
+  variance = 0.3,
 ): Promise<void> {
   await humanDelay(baseDelay, variance);
 }
@@ -35,17 +36,18 @@ export async function simulateTyping(
   options: {
     minDelay?: number;
     maxDelay?: number;
-  } = {}
+  } = {},
 ): Promise<void> {
   const minDelay = options.minDelay ?? 50;
   const maxDelay = options.maxDelay ?? 150;
 
   for (let i = 0; i < text.length; i++) {
     input.value = text.substring(0, i + 1);
-    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.dispatchEvent(new Event("input", { bubbles: true }));
 
     // Random delay between keystrokes
-    const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+    const delay =
+      Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
     await new Promise((resolve) => setTimeout(resolve, delay));
 
     // Occasional longer pause (thinking)
@@ -54,7 +56,7 @@ export async function simulateTyping(
     }
   }
 
-  input.dispatchEvent(new Event('change', { bubbles: true }));
+  input.dispatchEvent(new Event("change", { bubbles: true }));
 }
 
 /**
@@ -65,15 +67,15 @@ export async function simulateScrollToElement(
   options: {
     behavior?: ScrollBehavior;
     block?: ScrollLogicalPosition;
-  } = {}
+  } = {},
 ): Promise<void> {
-  const behavior = options.behavior ?? 'smooth';
-  const block = options.block ?? 'center';
+  const behavior = options.behavior ?? "smooth";
+  const block = options.block ?? "center";
 
   element.scrollIntoView({
     behavior,
     block,
-    inline: 'nearest',
+    inline: "nearest",
   });
 
   // Wait for scroll to complete
@@ -89,7 +91,7 @@ export async function simulatePageInteraction(): Promise<void> {
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
 
-    const mouseMoveEvent = new MouseEvent('mousemove', {
+    const mouseMoveEvent = new MouseEvent("mousemove", {
       view: window,
       bubbles: true,
       cancelable: true,
@@ -106,7 +108,7 @@ export async function simulatePageInteraction(): Promise<void> {
     const scrollAmount = Math.random() * 200 - 100;
     window.scrollBy({
       top: scrollAmount,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
     await randomSleep(200, 500);
   }
@@ -121,3 +123,4 @@ export function getHumanDelay(base: number, variance = 0.2): number {
   const max = base + variation;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
