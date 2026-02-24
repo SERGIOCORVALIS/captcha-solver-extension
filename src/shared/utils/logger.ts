@@ -4,17 +4,17 @@
  */
 
 export enum LogLevel {
-  DEBUG = 'DEBUG',
-  INFO = 'INFO',
-  WARN = 'WARN',
-  ERROR = 'ERROR',
+  DEBUG = "DEBUG",
+  INFO = "INFO",
+  WARN = "WARN",
+  ERROR = "ERROR",
 }
 
 export interface LogEntry {
   level: LogLevel;
   message: string;
   timestamp: number;
-  context?: Record<string, unknown>;
+  context?: unknown;
 }
 
 class Logger {
@@ -30,16 +30,34 @@ class Logger {
     return this.enabled;
   }
 
-  private log(level: LogLevel, message: string, context?: Record<string, unknown>): void {
+  private sanitizeMessage(message: string): string {
+    return message.replace(/^\[CAPTCHA Solver\]\s*/u, "").trim();
+  }
+
+  private stringifyContext(context?: unknown): string {
+    if (typeof context === "undefined") {
+      return "";
+    }
+
+    try {
+      return ` ${JSON.stringify(context)}`;
+    } catch {
+      return " [unserializable-context]";
+    }
+  }
+
+  private log(level: LogLevel, message: string, context?: unknown): void {
     // Always log important messages (INFO, WARN, ERROR) regardless of enabled state
     // Only skip DEBUG if disabled
     if (!this.enabled && level === LogLevel.DEBUG) {
       return;
     }
 
+    const sanitizedMessage = this.sanitizeMessage(message);
+
     const entry: LogEntry = {
       level,
-      message,
+      message: sanitizedMessage,
       timestamp: Date.now(),
       context,
     };
@@ -53,37 +71,37 @@ class Logger {
 
     // Console output with [CAPTCHA Solver] prefix for visibility
     const prefix = `[CAPTCHA Solver] [${level}]`;
-    const contextStr = context ? ` ${JSON.stringify(context)}` : '';
+    const contextStr = this.stringifyContext(context);
 
     switch (level) {
       case LogLevel.DEBUG:
-        console.debug(prefix, message, contextStr);
+        console.debug(prefix, sanitizedMessage, contextStr);
         break;
       case LogLevel.INFO:
-        console.info(prefix, message, contextStr);
+        console.info(prefix, sanitizedMessage, contextStr);
         break;
       case LogLevel.WARN:
-        console.warn(prefix, message, contextStr);
+        console.warn(prefix, sanitizedMessage, contextStr);
         break;
       case LogLevel.ERROR:
-        console.error(prefix, message, contextStr);
+        console.error(prefix, sanitizedMessage, contextStr);
         break;
     }
   }
 
-  debug(message: string, context?: Record<string, unknown>): void {
+  debug(message: string, context?: unknown): void {
     this.log(LogLevel.DEBUG, message, context);
   }
 
-  info(message: string, context?: Record<string, unknown>): void {
+  info(message: string, context?: unknown): void {
     this.log(LogLevel.INFO, message, context);
   }
 
-  warn(message: string, context?: Record<string, unknown>): void {
+  warn(message: string, context?: unknown): void {
     this.log(LogLevel.WARN, message, context);
   }
 
-  error(message: string, context?: Record<string, unknown>): void {
+  error(message: string, context?: unknown): void {
     this.log(LogLevel.ERROR, message, context);
   }
 
