@@ -3,7 +3,7 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { RateLimiter } from './rate-limiter';
+import { RateLimiter } from "./rate-limiter";
 
 export interface QueuedRequest<T> {
   id: string;
@@ -26,10 +26,7 @@ export class RequestQueue<T> {
   /**
    * Add request to queue
    */
-  async enqueue(
-    execute: () => Promise<T>,
-    priority = 0
-  ): Promise<T> {
+  async enqueue(execute: () => Promise<T>, priority = 0): Promise<T> {
     return new Promise<T>((resolve, reject) => {
       const request: QueuedRequest<T> = {
         id: `req_${Date.now()}_${Math.random()}`,
@@ -75,7 +72,9 @@ export class RequestQueue<T> {
         const result = await request.execute();
         request.resolve(result);
       } catch (error) {
-        request.reject(error instanceof Error ? error : new Error('Unknown error'));
+        request.reject(
+          error instanceof Error ? error : new Error("Unknown error"),
+        );
       }
     }
 
@@ -94,7 +93,7 @@ export class RequestQueue<T> {
    */
   clear(): void {
     this.queue.forEach((request) => {
-      request.reject(new Error('Queue cleared'));
+      request.reject(new Error("Queue cleared"));
     });
     this.queue = [];
   }
