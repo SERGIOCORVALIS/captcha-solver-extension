@@ -3,8 +3,8 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { createWorker } from 'tesseract.js';
-import { logger } from '../utils/logger';
+import { createWorker } from "tesseract.js";
+import { logger } from "../utils/logger";
 
 export interface LocalSolveResult {
   success: boolean;
@@ -26,19 +26,19 @@ export class LocalImageSolver {
     }
 
     try {
-      logger.info('Initializing local OCR solver...');
-      this.worker = await createWorker('eng', 1, {
+      logger.info("Initializing local OCR solver...");
+      this.worker = await createWorker("eng", 1, {
         logger: (m) => {
-          if (m.status === 'recognizing text') {
+          if (m.status === "recognizing text") {
             logger.debug(`OCR progress: ${Math.round(m.progress * 100)}%`);
           }
         },
       });
       this.isInitialized = true;
-      logger.info('Local OCR solver initialized');
+      logger.info("Local OCR solver initialized");
     } catch (error) {
-      logger.error('Failed to initialize OCR solver', {
-        error: error instanceof Error ? error.message : 'Unknown error',
+      logger.error("Failed to initialize OCR solver", {
+        error: error instanceof Error ? error.message : "Unknown error",
       });
       throw error;
     }
@@ -47,21 +47,23 @@ export class LocalImageSolver {
   /**
    * Solve image CAPTCHA using OCR
    */
-  async solveImage(imageElement: HTMLImageElement | HTMLCanvasElement): Promise<LocalSolveResult> {
+  async solveImage(
+    imageElement: HTMLImageElement | HTMLCanvasElement,
+  ): Promise<LocalSolveResult> {
     try {
       if (!this.isInitialized) {
         await this.initialize();
       }
 
       if (!this.worker) {
-        throw new Error('OCR worker not initialized');
+        throw new Error("OCR worker not initialized");
       }
 
-      logger.info('Solving image CAPTCHA locally...');
+      logger.info("Solving image CAPTCHA locally...");
 
       // Convert image to canvas if needed
       const canvas = await this.imageToCanvas(imageElement);
-      
+
       // Perform OCR
       const {
         data: { text, confidence },
@@ -70,7 +72,7 @@ export class LocalImageSolver {
       // Clean up text (remove whitespace, special chars)
       const cleanedText = this.cleanText(text);
 
-      logger.info('Image CAPTCHA solved locally', {
+      logger.info("Image CAPTCHA solved locally", {
         text: cleanedText,
         confidence: Math.round(confidence),
       });
@@ -81,13 +83,13 @@ export class LocalImageSolver {
         confidence: Math.round(confidence),
       };
     } catch (error) {
-      logger.error('Failed to solve image CAPTCHA locally', {
-        error: error instanceof Error ? error.message : 'Unknown error',
+      logger.error("Failed to solve image CAPTCHA locally", {
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: error instanceof Error ? error.message : "Unknown error",
       };
     }
   }
@@ -98,7 +100,7 @@ export class LocalImageSolver {
   async solveImageFromBase64(base64: string): Promise<LocalSolveResult> {
     try {
       const img = new Image();
-      img.crossOrigin = 'anonymous';
+      img.crossOrigin = "anonymous";
 
       return new Promise((resolve) => {
         img.onload = async () => {
@@ -109,7 +111,7 @@ export class LocalImageSolver {
         img.onerror = () => {
           resolve({
             success: false,
-            error: 'Failed to load image from base64',
+            error: "Failed to load image from base64",
           });
         };
 
@@ -118,7 +120,7 @@ export class LocalImageSolver {
     } catch (error) {
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: error instanceof Error ? error.message : "Unknown error",
       };
     }
   }
@@ -127,13 +129,13 @@ export class LocalImageSolver {
    * Convert image element to canvas
    */
   private async imageToCanvas(
-    image: HTMLImageElement | HTMLCanvasElement
+    image: HTMLImageElement | HTMLCanvasElement,
   ): Promise<HTMLCanvasElement> {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
     if (!ctx) {
-      throw new Error('Failed to get canvas context');
+      throw new Error("Failed to get canvas context");
     }
 
     if (image instanceof HTMLCanvasElement) {
@@ -186,8 +188,8 @@ export class LocalImageSolver {
    */
   private cleanText(text: string): string {
     return text
-      .replace(/\s+/g, '') // Remove all whitespace
-      .replace(/[^a-zA-Z0-9]/g, '') // Remove special characters
+      .replace(/\s+/g, "") // Remove all whitespace
+      .replace(/[^a-zA-Z0-9]/g, "") // Remove special characters
       .toUpperCase(); // Convert to uppercase
   }
 
@@ -199,7 +201,7 @@ export class LocalImageSolver {
       await this.worker.terminate();
       this.worker = null;
       this.isInitialized = false;
-      logger.info('Local OCR solver terminated');
+      logger.info("Local OCR solver terminated");
     }
   }
 }
