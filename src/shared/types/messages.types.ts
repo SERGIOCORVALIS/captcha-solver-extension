@@ -3,27 +3,31 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { CaptchaType, CaptchaDetectionResult, CaptchaSolveResult } from './captcha.types';
-import { ExtensionConfig } from './config.types';
+import {
+  CaptchaType,
+  CaptchaDetectionResult,
+  CaptchaSolveResult,
+} from "./captcha.types";
+import { ExtensionConfig } from "./config.types";
 
 export enum MessageType {
   // Content Script Messages
-  DETECT_CAPTCHA = 'DETECT_CAPTCHA',
-  SOLVE_CAPTCHA = 'SOLVE_CAPTCHA',
-  CAPTCHA_DETECTED = 'CAPTCHA_DETECTED',
-  CAPTCHA_SOLVED = 'CAPTCHA_SOLVED',
-  CAPTCHA_ERROR = 'CAPTCHA_ERROR',
-  INJECT_TOKEN = 'INJECT_TOKEN',
+  DETECT_CAPTCHA = "DETECT_CAPTCHA",
+  SOLVE_CAPTCHA = "SOLVE_CAPTCHA",
+  CAPTCHA_DETECTED = "CAPTCHA_DETECTED",
+  CAPTCHA_SOLVED = "CAPTCHA_SOLVED",
+  CAPTCHA_ERROR = "CAPTCHA_ERROR",
+  INJECT_TOKEN = "INJECT_TOKEN",
 
   // Background Messages
-  GET_CONFIG = 'GET_CONFIG',
-  UPDATE_CONFIG = 'UPDATE_CONFIG',
-  GET_STATISTICS = 'GET_STATISTICS',
-  RESET_STATISTICS = 'RESET_STATISTICS',
+  GET_CONFIG = "GET_CONFIG",
+  UPDATE_CONFIG = "UPDATE_CONFIG",
+  GET_STATISTICS = "GET_STATISTICS",
+  RESET_STATISTICS = "RESET_STATISTICS",
 
   // Popup Messages
-  TOGGLE_ENABLED = 'TOGGLE_ENABLED',
-  GET_STATUS = 'GET_STATUS',
+  TOGGLE_ENABLED = "TOGGLE_ENABLED",
+  GET_STATUS = "GET_STATUS",
 }
 
 export interface BaseMessage {
@@ -108,3 +112,4 @@ export interface MessageResponse<T = unknown> {
   data?: T;
   error?: string;
 }
+
