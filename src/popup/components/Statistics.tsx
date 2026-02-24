@@ -3,25 +3,27 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import React from 'react';
-import { ExtensionConfig } from '../../shared/types/config.types';
-import { CaptchaType } from '../../shared/types/captcha.types';
+import React from "react";
+import { ExtensionConfig } from "../../shared/types/config.types";
+import { CaptchaType } from "../../shared/types/captcha.types";
 
 interface StatisticsProps {
-  statistics: ExtensionConfig['statistics'];
+  statistics: ExtensionConfig["statistics"];
 }
 
 export const Statistics: React.FC<StatisticsProps> = ({ statistics }) => {
   const typeNames: Record<CaptchaType, string> = {
-    [CaptchaType.RECAPTCHA_V2]: 'reCAPTCHA v2',
-    [CaptchaType.RECAPTCHA_V3]: 'reCAPTCHA v3',
-    [CaptchaType.HCAPTCHA]: 'hCaptcha',
-    [CaptchaType.TURNSTILE]: 'Turnstile',
-    [CaptchaType.IMAGE_CAPTCHA]: 'Image',
-    [CaptchaType.UNKNOWN]: 'Unknown',
+    [CaptchaType.RECAPTCHA_V2]: "reCAPTCHA v2",
+    [CaptchaType.RECAPTCHA_V3]: "reCAPTCHA v3",
+    [CaptchaType.HCAPTCHA]: "hCaptcha",
+    [CaptchaType.TURNSTILE]: "Turnstile",
+    [CaptchaType.IMAGE_CAPTCHA]: "Image",
+    [CaptchaType.UNKNOWN]: "Unknown",
   };
 
-  const solvedTypes = Object.entries(statistics.byType).filter(([_, count]) => count > 0);
+  const solvedTypes = Object.entries(statistics.byType).filter(
+    ([_, count]) => count > 0,
+  );
 
   return (
     <div className="statistics-container">
@@ -47,7 +49,9 @@ export const Statistics: React.FC<StatisticsProps> = ({ statistics }) => {
           <div className="space-y-1">
             {solvedTypes.map(([type, count]) => (
               <div key={type} className="flex justify-between text-sm">
-                <span className="text-gray-600">{typeNames[type as CaptchaType]}:</span>
+                <span className="text-gray-600">
+                  {typeNames[type as CaptchaType]}:
+                </span>
                 <span className="font-medium">{count}</span>
               </div>
             ))}
