@@ -3,9 +3,14 @@
  * Copyright (c) 2024 PANKOV SERGEY VLADIMIROVICH. All rights reserved.
  */
 
-import { CaptchaType } from './captcha.types';
+import { CaptchaType } from "./captcha.types";
 
-export type ApiProvider = '2captcha' | 'anticaptcha' | 'capsolver' | 'custom' | 'none';
+export type ApiProvider =
+  | "2captcha"
+  | "anticaptcha"
+  | "capsolver"
+  | "custom"
+  | "none";
 
 export interface ApiConfig {
   provider: ApiProvider;
