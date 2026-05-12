@@ -62,7 +62,7 @@
     "jsdom": "^27.4.0",
     "lint-staged": "^16.2.7",
     "playwright": "^1.58.0",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.14",
     "prettier": "^3.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -70,7 +70,7 @@
     "tailwindcss": "^4.1.18",
     "terser": "^5.46.0",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
+    "vite": "^7.3.3",
     "vite-plugin-static-copy": "^3.2.0",
     "vitest": "^4.0.18"
   },
